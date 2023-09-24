@@ -1,7 +1,7 @@
 # Todo App
 
 A simple and lightweight task management web application built using HTML, CSS, and Vanilla JavaScript.
-![Image showing my TODO app](/relative/path/to/img.jpg?raw=true "TODO Application")
+![Image showing my TODO app](https://github.com/Lu555ak/todo_app/blob/main/screenshot.jpg?raw=true "TODO Application")
 
 ## Table of Contents
 - [Introduction](#introduction)
