@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link defer rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <nav>
+        <div class="title_row">
+            <h2>Menu</h2>
+            <div class="button">
+                <div class="hamburger_icon"></div>
+            </div>
+        </div>
+        <div class="nav__tasks">
+            <h3>Tasks</h3>
+            <div class="task_group" onclick="displayTasks(getUpcomingTasksID())">
+                <div class="task_group--left">
+                    <img src="images/double-right.svg" alt="Two arrow pointing right" class="task_group__icon">
+                    <span class="task_group__title">Upcoming</span>
+                </div>
+                <div class="task_group__count" id="upcomingTaskCount">0</div>
+            </div>
+            <div class="task_group" onclick="displayTasks(getTodayTasksID())">
+                <div class="task_group--left">
+                    <img src="images/list-task.svg" alt="List image" class="task_group__icon">
+                    <span class="task_group__title">Today</span>
+                </div>
+                <div class="task_group__count" id="todayTaskCount">0</div>
+            </div>
+            <div class="task_group" onclick="displayTasks(getEveryTaskID())">
+                <div class="task_group--left">
+                    <img src="images/calendar.svg" alt="Calendar icon" class="task_group__icon">
+                    <span class="task_group__title">Everything</span>
+                </div>
+                <div class="task_group__count" id="everythingTaskCount">0</div>
+            </div>
+        </div>
+        <div class="nav__tasks">
+            <h3>Lists</h3>
+            <span id="listMenu"></span>
+            <div class="task_group" onclick="setAsideMode(null); setAsideMode(`newList`);">
+                <div class="task_group--left">
+                    <img src="images/plus-square.svg" alt="Plus icon" class="task_group__icon">
+                    <span class="task_group__title">Add List</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="title_row">
+            <h1 id="taskGroupTitle">Today</h1>
+            <div id="taskGroupCount" class="task_group__count task_group__count--big">0</div>
+        </div>
+        <div class="task__create" onclick="setAsideMode(`newTask`)">
+            <span class="task__create--plus">+</span> Add New Task
+        </div>
+        <div class="nav__tasks" id="taskMenu">
+
+        </div>
+    </main>
+    <aside>
+        <h2 id="taskTitle">Task:</h2>
+        <input type="text" name="" id="taskName" placeholder="Name">
+        <textarea name="" id="taskDescription" cols="30" rows="10" placeholder="Description"></textarea>
+        
+        <div class="form_group">
+            <label for="taskList">List: </label>
+            <select id="taskList" name="">
+                <option value="personal">Personal</option>
+                <option value="home">Home</option>
+                <option value="school">School</option>
+            </select>
+        </div>
+
+        <div class="form_group">
+            <label for="taskDate">Due date: </label>
+            <input type="date" name="" id="taskDate">
+        </div>
+
+        <div class="form_group">
+            <label id="taskColorLabel" for="taskColor">Color: </label>
+            <input type="color" id="taskColor" name="favcolor" value="#ff0000">
+        </div>
+
+        <div class="task__bottom">
+            <button id="taskCancelButton" type="button" onclick="setAsideMode(0)">Cancel</button>
+            <button id="taskConfirmButton" type="button" class="button--em" onclick="saveButton()">Save Task</button>
+        </div>
+    </aside>
+</body>
+</html>
